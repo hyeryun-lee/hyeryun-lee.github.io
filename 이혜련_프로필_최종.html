@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="이혜련 · 품질관리 사무직 지향, 자격증 3개 보유">
+<title>이혜련 — 품질관리 사무직</title>
+<style>
+:root{
+  --paper:#F6F7F5;
+  --ink:#1E2422;
+  --muted:#616B65;
+  --line:#DDE1DC;
+  --line-soft:#E8EBE7;
+  --accent:#2E5F63;
+  --accent-soft:#E6EDED;
+
+  --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Noto Sans KR",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"D2Coding","Malgun Gothic",monospace;
+
+  --pad:22px;
+  --gap:clamp(48px,11vw,84px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  font-size:17px;          /* 읽기 편한 기본 크기 */
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.75;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;
+  word-break:keep-all;      /* 한글 단어 단위 줄바꿈 */
+}
+
+a{color:inherit}
+
+.wrap{
+  width:100%;
+  max-width:660px;
+  margin:0 auto;
+  padding-left:var(--pad);
+  padding-right:var(--pad);
+}
+
+/* ── 공통 섹션 ─────────────────── */
+.sec{padding-top:var(--gap);padding-bottom:var(--gap);border-top:1px solid var(--line)}
+
+.sec-title{
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.14em;
+  color:var(--muted);
+  font-weight:600;
+  margin:0 0 24px;
+}
+
+/* ── 1. 소개 ─────────────────── */
+.intro{padding-top:clamp(56px,14vw,96px);padding-bottom:var(--gap)}
+
+.intro h1{
+  font-size:clamp(2rem,9vw,3rem);
+  font-weight:700;
+  letter-spacing:-.035em;
+  line-height:1.15;
+  margin:0 0 20px;
+}
+
+.tagline{
+  font-size:clamp(1.15rem,4.6vw,1.45rem);
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.5;
+  margin:0 0 20px;
+  color:var(--accent);
+}
+
+.intro p.desc{
+  color:var(--muted);
+  margin:0 0 28px;
+  font-size:1rem;
+}
+
+.facts{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 10px;
+}
+.facts li{
+  font-family:var(--mono);
+  font-size:.76rem;
+  letter-spacing:.02em;
+  color:var(--muted);
+  padding:6px 12px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  background:#fff;
+}
+
+/* ── 2. 자격 및 교육 ─────────────────── */
+.certs{margin:0 0 40px;padding:0;list-style:none}
+
+.cert{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:4px 14px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.cert:first-child{border-top:1px solid var(--line-soft)}
+
+.cert .name{font-weight:600;font-size:1.03rem;letter-spacing:-.015em}
+.cert .org{color:var(--muted);font-size:.86rem}
+.cert .date{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--muted);
+  margin-left:auto;
+  white-space:nowrap;
+}
+
+.course{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:24px 22px;
+}
+.course h3{
+  font-size:1.05rem;
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.5;
+  margin:0 0 6px;
+}
+.course .period{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--muted);
+  margin:0 0 20px;
+}
+
+.progress{margin:0 0 22px}
+.track{
+  height:5px;
+  background:var(--accent-soft);
+  border-radius:3px;
+  overflow:hidden;
+}
+.fill{
+  height:100%;
+  width:0;
+  background:var(--accent);
+  border-radius:3px;
+  transition:width 1s cubic-bezier(.25,.8,.35,1);
+}
+.legend{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-family:var(--mono);
+  font-size:.74rem;
+  color:var(--muted);
+  margin-top:9px;
+}
+.legend b{color:var(--ink);font-weight:600}
+
+.course h4{
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.12em;
+  color:var(--muted);
+  font-weight:600;
+  margin:0 0 10px;
+}
+.course h4 + ul{margin:0 0 20px}
+.course h4 + ul:last-of-type{margin-bottom:0}
+
+.tags{padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.tags li{
+  font-size:.85rem;
+  line-height:1.45;
+  padding:6px 12px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  color:var(--muted);
+}
+.tags li[data-core]{
+  border-color:var(--accent);
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* ── 3. 경력 ─────────────────── */
+.total{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--muted);
+  margin:0 0 22px;
+}
+
+.job{padding:22px 0;border-top:1px solid var(--line-soft)}
+.job:last-child{border-bottom:1px solid var(--line-soft)}
+
+.job .when{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--muted);
+  margin:0 0 6px;
+}
+.job h3{
+  font-size:1.08rem;
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin:0 0 2px;
+}
+.job .role{
+  font-size:.86rem;
+  color:var(--muted);
+  margin:0 0 14px;
+}
+.job ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.job ul li{
+  font-size:.85rem;
+  padding:6px 12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:3px;
+}
+
+/* ── 4. 강점 ─────────────────── */
+.points{margin:0;padding:0;list-style:none}
+.points li{
+  padding:22px 0 22px 20px;
+  border-top:1px solid var(--line-soft);
+  border-left:2px solid var(--accent);
+}
+.points li:last-child{border-bottom:1px solid var(--line-soft)}
+.points strong{
+  display:block;
+  font-size:1.03rem;
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin-bottom:7px;
+}
+.points span{color:var(--muted);font-size:.94rem}
+
+/* ── 5. 연락처 ─────────────────── */
+.contact{padding-bottom:clamp(56px,14vw,96px)}
+
+.terms{margin:0 0 30px}
+.terms div{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px 16px;
+  align-items:baseline;
+  padding:13px 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.terms div:first-child{border-top:1px solid var(--line-soft)}
+.terms dt{
+  font-family:var(--mono);
+  font-size:.74rem;
+  letter-spacing:.09em;
+  color:var(--muted);
+  min-width:96px;
+}
+.terms dd{margin:0;font-weight:600;font-size:.98rem}
+
+.mailrow{display:flex;flex-wrap:wrap;gap:10px}
+
+.mail{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:48px;               /* 모바일 터치 영역 */
+  padding:12px 20px;
+  border-radius:4px;
+  font-size:.95rem;
+  font-weight:600;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  cursor:pointer;
+  font-family:inherit;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.mail--solid{background:var(--accent);color:#fff;border:1px solid var(--accent)}
+.mail--solid:hover{background:#254E52;border-color:#254E52}
+.mail--ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.mail--ghost:hover{border-color:var(--accent);color:var(--accent)}
+.mail:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+footer{
+  padding:24px var(--pad) 44px;
+  max-width:660px;
+  margin:0 auto;
+  border-top:1px solid var(--line);
+  font-family:var(--mono);
+  font-size:.72rem;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+/* ── 로드 시 한 번만, 조용하게 ─────────────────── */
+.fade{opacity:0;transform:translateY(8px);animation:up .6s ease forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.fade:nth-child(2){animation-delay:.06s}
+.fade:nth-child(3){animation-delay:.12s}
+.fade:nth-child(4){animation-delay:.18s}
+
+/* ── 넓은 화면 ─────────────────── */
+@media (min-width:600px){
+  :root{--pad:40px}
+  .cert{gap:6px 18px}
+  .job{display:grid;grid-template-columns:150px 1fr;gap:0 28px}
+  .job .when{grid-row:1/4;margin:0}
+  .terms dt{min-width:120px}
+}
+
+@media (min-width:900px){
+  html{font-size:17.5px}
+  :root{--pad:48px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .fade{opacity:1;transform:none;animation:none}
+  .fill{transition:none}
+}
+
+@media print{
+  body{background:#fff}
+  .course,.job ul li,.facts li{background:#fff}
+  .fade{opacity:1;transform:none;animation:none}
+  .mail--solid{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+
+<main>
+
+  <!-- 1. 소개 -->
+  <header class="intro wrap">
+    <h1 class="fade">이혜련</h1>
+    <p class="tagline fade">품질관리 사무직 지향, 자격증 3개 보유</p>
+    <p class="desc fade">식품 제조 현장에서 2년간 재고·위생·근태 관리와 사무업무를 담당했습니다. 현재 MEGA-AX 핵심인재 양성 교육에서 ISO 인증심사원 과정과 공정관리 실무를 이수하고 있습니다.</p>
+    <ul class="facts fade">
+      <li>1999년생</li>
+      <li>경상남도 창원시 마산합포구</li>
+      <li>지역무관 근무 가능</li>
+      <li>운전면허 보유</li>
+    </ul>
+  </header>
+
+  <!-- 2. 자격 및 교육 -->
+  <section class="sec wrap">
+    <h2 class="sec-title">자격 및 교육</h2>
+
+    <ul class="certs">
+      <li class="cert">
+        <span class="name">컴퓨터활용능력 2급</span>
+        <span class="org">대한상공회의소</span>
+        <span class="date">2023.12.29</span>
+      </li>
+      <li class="cert">
+        <span class="name">전산회계 1급</span>
+        <span class="org">한국자격검정평가진흥원</span>
+        <span class="date">2026.04.23</span>
+      </li>
+      <li class="cert">
+        <span class="name">영양사</span>
+        <span class="org">보건복지부</span>
+        <span class="date">2022.01.06</span>
+      </li>
+    </ul>
+
+    <article class="course">
+      <h3>2026년 초광역 제조산업 MEGA-AX 핵심인재 양성 교육 (경남)</h3>
+      <p class="period">2026.06.22 — 2026.11.07</p>
+
+      <div class="progress">
+        <div class="track"><div class="fill" id="fill"></div></div>
+        <p class="legend">
+          <span>교육 진행 <b id="pct">—</b></span>
+          <span>수료까지 <b id="left">—</b></span>
+        </p>
+      </div>
+
+      <h4>품질 · 공정 관련 과정</h4>
+      <ul class="tags">
+        <li data-core>ISO 9001 (예비)인증심사원</li>
+        <li data-core>ISO 14001 &amp; 45001 (예비)인증심사원</li>
+        <li data-core>6·7·8시그마(GB) 자격과정</li>
+        <li data-core>공정관리 및 공정개선 실무</li>
+        <li data-core>3정 5S 추진 실무</li>
+        <li data-core>CAD 카티아</li>
+      </ul>
+
+      <h4>그 외 과정</h4>
+      <ul class="tags">
+        <li>직무소양교육</li>
+        <li>초신산업 프로젝트 관리 실무</li>
+        <li>AI Tool 관련 과정</li>
+        <li>노코드자동화관리사 자격과정</li>
+        <li>AX-PBL 프로젝트</li>
+        <li>기업현장실습</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- 3. 경력 -->
+  <section class="sec wrap">
+    <h2 class="sec-title">경력</h2>
+    <p class="total">총 2년 0개월 · 공백 없음</p>
+
+    <article class="job">
+      <p class="when">2024.01 — 2025.01</p>
+      <h3>주식회사 아워홈</h3>
+      <p class="role">영양사</p>
+      <ul>
+        <li>식단 작성</li><li>재고관리</li><li>위생관리</li><li>사무업무 보조</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <p class="when">2023.03 — 2024.01</p>
+      <h3>주식회사 인스</h3>
+      <p class="role">영양사</p>
+      <ul>
+        <li>식단 작성</li><li>재고관리</li><li>근태관리</li><li>사무업무 보조</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- 4. 강점 -->
+  <section class="sec wrap">
+    <h2 class="sec-title">강점</h2>
+    <ul class="points">
+      <li>
+        <strong>ISO 인증심사원 과정 이수 중</strong>
+        <span>ISO 9001, ISO 14001 &amp; 45001 (예비)인증심사원 과정을 2026년 11월 수료 예정입니다.</span>
+      </li>
+      <li>
+        <strong>공정관리 실무 교육</strong>
+        <span>공정관리 및 공정개선 실무, 3정 5S 추진 실무, 6·7·8시그마(GB) 과정을 이수하고 있습니다.</span>
+      </li>
+      <li>
+        <strong>2년간 재고 · 위생 관리 경험</strong>
+        <span>제조·급식 현장에서 재고와 위생, 근태를 관리하며 사무업무를 함께 담당했습니다.</span>
+      </li>
+      <li>
+        <strong>문서 · 데이터 처리</strong>
+        <span>워드프로세서, 스프레드시트, 프레젠테이션 프로그램을 사용합니다. 컴퓨터활용능력 2급 보유. 케이렙(KcLep)과 더존 회계 프로그램도 다룰 수 있습니다.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 5. 연락처 -->
+  <section class="sec contact wrap">
+    <h2 class="sec-title">연락처</h2>
+
+    <dl class="terms">
+      <div><dt>희망 직무</dt><dd>품질관리 사무원</dd></div>
+      <div><dt>고용 형태</dt><dd>기간의 정함이 없는 근로계약</dd></div>
+      <div><dt>희망 근무지</dt><dd>지역무관</dd></div>
+      <div><dt>희망 임금</dt><dd>월 230만원 이상</dd></div>
+    </dl>
+
+    <div class="mailrow">
+      <a class="mail mail--solid" href="mailto:sapa1999@naver.com">sapa1999@naver.com</a>
+      <button class="mail mail--ghost" type="button" id="copyBtn">
+        <span id="copyLabel">주소 복사</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  이 페이지의 모든 항목은 본인 이력서에 기재된 내용만 사용했습니다.<br>
+  최종 수정 2026.08 · 이혜련
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* 교육 진행률 — 실제 교육 기간에서 계산 */
+  var start = new Date(2026, 5, 22);   // 2026.06.22
+  var end   = new Date(2026, 10, 7);   // 2026.11.07
+  var now   = new Date();
+  var DAY   = 86400000;
+
+  var total = Math.round((end - start) / DAY);
+  var done  = Math.round((now - start) / DAY);
+  var pct   = Math.max(0, Math.min(100, Math.round(done / total * 100)));
+  var left  = Math.max(0, Math.round((end - now) / DAY));
+
+  var pctEl  = document.getElementById('pct');
+  var leftEl = document.getElementById('left');
+  var fillEl = document.getElementById('fill');
+
+  if (pctEl)  pctEl.textContent = pct + '%';
+  if (leftEl) leftEl.textContent = left > 0 ? left + '일' : '수료 완료';
+
+  if (fillEl) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      fillEl.style.width = pct + '%';
+    } else {
+      window.setTimeout(function () { fillEl.style.width = pct + '%'; }, 300);
+    }
+  }
+
+  /* 이메일 주소 복사 */
+  var btn   = document.getElementById('copyBtn');
+  var label = document.getElementById('copyLabel');
+  var EMAIL = 'sapa1999@naver.com';
+
+  if (!btn || !label) return;
+
+  btn.addEventListener('click', function () {
+    var original = '주소 복사';
+
+    var succeed = function () {
+      label.textContent = '복사했습니다';
+      window.setTimeout(function () { label.textContent = original; }, 1800);
+    };
+    var fallback = function () {
+      label.textContent = EMAIL;
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(EMAIL).then(succeed, fallback);
+      return;
+    }
+
+    var ta = document.createElement('textarea');
+    ta.value = EMAIL;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); succeed(); } catch (e) { fallback(); }
+    document.body.removeChild(ta);
+  });
+})();
+</script>
+
+</body>
+</html>
